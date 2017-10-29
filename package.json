@@ -1,0 +1,25 @@
+{
+  "name": "Binger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mohit60000:Pulkit_123@github.com/mohit60000/Binger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohit60000/Binger/issues"
+  },
+  "homepage": "https://github.com/mohit60000/Binger#readme",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  }
+}
