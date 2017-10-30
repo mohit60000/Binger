@@ -6,6 +6,34 @@
   <script type="text/javascript" src="../public/js/jquery.min.js"></script>
   <script type="text/javascript" src="../public/js/speechRecognition.js"></script>
   <script type="text/javascript" src="../public/js/controller.js"></script>
+  <script>
+    window.onload = function() {
+      // setup the button click
+      $.ajax({
+        url:"http://127.0.0.1/reset",
+        data:'',
+        type:"GET"
+      });
+      event.preventDefault();
+      document.getElementById("theButton").onclick = function() {
+        document.getElementById('resp').innerHTML+="USER:"+document.getElementById('output').value+"<br>"
+        doWork()
+      };
+    }
+
+    function doWork() {
+      txt={"query":document.getElementById('output').value}
+      // ajax the JSON to the server
+      $.ajax({
+        url:"http://127.0.0.1/receiver", 
+        data: txt,
+        type:"GET",
+        success: function(result){ document.getElementById('resp').innerHTML+="SYSTEM:"+result+"<br>"; }
+      });
+      // stop link reloading the page
+     event.preventDefault();
+    }
+  </script>
 </head>
 <body>
   <p>
@@ -15,5 +43,8 @@
    <br><br>
    <textarea id="output" rows=10 placeholder="result"></textarea>
  </p>
+ <a href="" id="theButton">Click Me</a>
+ <div id="resp">
+ </div>
 </body>
 </html>
