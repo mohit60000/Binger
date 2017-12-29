@@ -17,7 +17,8 @@ function Speech() {
 
     this.recognition.onresult = function(event) {
       console.log(event.results[0][0].transcript);
-      $('#output').text(event.results[0][0].transcript);      
+      $('#output').val(event.results[0][0].transcript);
+      //insertMessage();
     }
 
     this.recognition.onerror = function(event) {

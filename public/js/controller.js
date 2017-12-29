@@ -14,14 +14,18 @@ $( document ).ready(function() {
     $('#capture').val("true");
     $('#status').text("Idle");
       console.log('Listening stopped.');
+    insertMessage();
     }
 
   $('#capture').click(function(){
     if ($('#capture').val() == "true") {
+      responsiveVoice.cancel();
       speech.startCapture();
+      console.log('True');
     }
     else {
       speech.stopCapture();
+      console.log('False');
     }
   });
 });
